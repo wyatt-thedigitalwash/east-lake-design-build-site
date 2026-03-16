@@ -21,9 +21,9 @@ export default function Footer() {
             <Image
               src="/assets/eastlake-design-build-logo-white.png"
               alt="East Lake Design & Build"
-              width={160}
-              height={48}
-              className="h-12 w-auto mb-4"
+              width={220}
+              height={66}
+              className="h-16 w-auto mb-4"
             />
             <p className="text-cream/70 text-sm leading-relaxed">
               Built with Integrity. Designed to Endure.

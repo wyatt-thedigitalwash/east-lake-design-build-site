@@ -27,7 +27,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/assets/eastlake-design-build-logo-white.png"
+            src="/assets/eastlake-design-build-site-logo.png"
             alt="East Lake Design & Build"
             width={160}
             height={48}
