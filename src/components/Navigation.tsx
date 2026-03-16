@@ -54,9 +54,12 @@ export default function Navigation() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="font-sans text-sm uppercase tracking-widest text-cream hover:text-gold transition-colors">
+            <Link
+              href="/services"
+              className="font-sans text-sm uppercase tracking-widest text-cream hover:text-gold transition-colors"
+            >
               Services
-            </button>
+            </Link>
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-0 pt-2">
                 <div className="bg-green-dark border border-cream/10 shadow-lg min-w-[200px]">
@@ -122,9 +125,13 @@ export default function Navigation() {
               About
             </Link>
             <div className="flex flex-col">
-              <span className="text-sm uppercase tracking-widest text-cream py-2">
+              <Link
+                href="/services"
+                onClick={() => setMobileOpen(false)}
+                className="text-sm uppercase tracking-widest text-cream py-2"
+              >
                 Services
-              </span>
+              </Link>
               {serviceLinks.map((link) => (
                 <Link
                   key={link.href}
