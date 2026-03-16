@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, Hammer, Eye, Mountain } from "lucide-react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import InlineCTA from "@/components/InlineCTA";
+import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
   title: "About Us | East Lake Design & Build | Pinellas County Design-Build Firm",
@@ -146,6 +148,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Inline CTA */}
+      <InlineCTA headline="Ready to work with a team that builds the right way?" />
+
       {/* License & Service Area */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -176,21 +181,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-green-primary py-20 md:py-28">
-        <AnimateOnScroll>
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="font-[Georgia,serif] text-3xl md:text-4xl text-cream mb-8">
-              Let&apos;s Build Something Together
-            </h2>
-            <Link
-              href="/contact"
-              className="inline-block bg-gold text-green-primary px-8 py-4 uppercase tracking-widest text-sm font-semibold transition-all duration-300 ease-in-out hover:bg-gold/85"
-            >
-              Get a Free Consultation
-            </Link>
-          </div>
-        </AnimateOnScroll>
-      </section>
+      <PageCTA headline={"Your Vision Deserves\na Builder You Can Trust"} />
     </>
   );
 }

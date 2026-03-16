@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PenTool, Hammer, Home, Sun, Droplets, CloudLightning } from "lucide-react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import InlineCTA from "@/components/InlineCTA";
+import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
   title: "Custom Home Construction | East Lake Design & Build | Pinellas County",
@@ -177,6 +179,9 @@ export default function NewConstructionPage() {
         </div>
       </section>
 
+      {/* Inline CTA */}
+      <InlineCTA headline="Have questions about building a custom home?" />
+
       {/* Built for Florida */}
       <section className="bg-green-primary py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
@@ -253,21 +258,7 @@ export default function NewConstructionPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-green-primary py-20 md:py-28">
-        <AnimateOnScroll>
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="font-[Georgia,serif] text-3xl md:text-4xl text-cream mb-8">
-              Start Your Custom Home Build
-            </h2>
-            <Link
-              href="/contact"
-              className="inline-block bg-gold text-green-primary px-8 py-4 uppercase tracking-widest text-sm font-semibold transition-all duration-300 ease-in-out hover:bg-gold/85"
-            >
-              Get a Free Consultation
-            </Link>
-          </div>
-        </AnimateOnScroll>
-      </section>
+      <PageCTA headline={"Ready to Build\nYour Forever Home?"} />
     </>
   );
 }

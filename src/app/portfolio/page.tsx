@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
   title: "Our Work | East Lake Design & Build | Project Portfolio",
@@ -75,21 +75,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-green-primary py-20 md:py-28">
-        <AnimateOnScroll>
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="font-[Georgia,serif] text-3xl md:text-4xl text-cream mb-8">
-              Have a Project in Mind?
-            </h2>
-            <Link
-              href="/contact"
-              className="inline-block bg-gold text-green-primary px-8 py-4 uppercase tracking-widest text-sm font-semibold transition-all duration-300 ease-in-out hover:bg-gold/85"
-            >
-              Let&apos;s Talk
-            </Link>
-          </div>
-        </AnimateOnScroll>
-      </section>
+      <PageCTA headline={"Like What You See?\nLet's Build Yours."} />
     </>
   );
 }

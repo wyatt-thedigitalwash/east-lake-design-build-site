@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CookingPot, Bath, Home, Paintbrush } from "lucide-react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import InlineCTA from "@/components/InlineCTA";
+import PageCTA from "@/components/PageCTA";
 
 export const metadata: Metadata = {
   title: "Interior Remodeling | East Lake Design & Build | St. Petersburg, FL",
@@ -145,6 +147,9 @@ export default function RemodelingPage() {
         </div>
       </section>
 
+      {/* Inline CTA */}
+      <InlineCTA headline="Not sure where to start with your remodel?" />
+
       {/* Gallery Placeholder */}
       <section className="bg-cream py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
@@ -184,21 +189,7 @@ export default function RemodelingPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-green-primary py-20 md:py-28">
-        <AnimateOnScroll>
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="font-[Georgia,serif] text-3xl md:text-4xl text-cream mb-8">
-              Ready to Transform Your Space?
-            </h2>
-            <Link
-              href="/contact"
-              className="inline-block bg-gold text-green-primary px-8 py-4 uppercase tracking-widest text-sm font-semibold transition-all duration-300 ease-in-out hover:bg-gold/85"
-            >
-              Get a Free Consultation
-            </Link>
-          </div>
-        </AnimateOnScroll>
-      </section>
+      <PageCTA headline={"Your Dream Space\nis One Call Away"} />
     </>
   );
 }
