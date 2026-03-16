@@ -54,7 +54,7 @@ function HeroFadeIn({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(1.5rem)",
-        transition: "opacity 700ms ease-out, transform 700ms ease-out",
+        transition: "opacity 500ms ease-out, transform 500ms ease-out",
       }}
     >
       {children}
@@ -77,17 +77,17 @@ export default function Home() {
         />
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <HeroFadeIn delay={300}>
+          <HeroFadeIn delay={200}>
             <p className="text-sm uppercase tracking-widest text-gold mb-6">
               Pinellas County&apos;s Premier Design-Build Firm
             </p>
           </HeroFadeIn>
 
-          <HeroFadeIn delay={450}>
+          <HeroFadeIn delay={300}>
             <div className="h-[2px] bg-gold w-20 mx-auto mb-8" />
           </HeroFadeIn>
 
-          <HeroFadeIn delay={600}>
+          <HeroFadeIn delay={400}>
             <h1 className="font-[Georgia,serif] uppercase text-5xl md:text-7xl text-white leading-tight mb-6">
               Built with Integrity.
               <br />
@@ -95,14 +95,14 @@ export default function Home() {
             </h1>
           </HeroFadeIn>
 
-          <HeroFadeIn delay={900}>
+          <HeroFadeIn delay={600}>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10">
               Custom homes and transformative remodels crafted with precision and
               pride.
             </p>
           </HeroFadeIn>
 
-          <HeroFadeIn delay={1200}>
+          <HeroFadeIn delay={800}>
             <Link
               href="/contact"
               className="inline-block bg-white text-green-primary px-8 py-4 uppercase tracking-widest text-sm font-semibold transition-all duration-300 ease-in-out hover:bg-gold hover:text-green-primary"
@@ -155,7 +155,7 @@ export default function Home() {
             </AnimateOnScroll>
 
             {/* Interior Remodeling */}
-            <AnimateOnScroll delay={200}>
+            <AnimateOnScroll delay={150}>
               <div className="group border border-muted shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
                 <div className="h-64 bg-gradient-to-br from-muted/40 to-green-primary/20 flex items-center justify-center overflow-hidden relative">
                   <div className="absolute inset-0 bg-green-primary/0 transition-all duration-300 ease-in-out group-hover:bg-green-primary/10" />
@@ -205,7 +205,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {valueProps.map((prop, i) => (
-              <AnimateOnScroll key={prop.title} delay={i * 150}>
+              <AnimateOnScroll key={prop.title} delay={i * 100}>
                 <div className="group text-center md:text-left pb-8 border-b border-muted">
                   <prop.icon
                     className="text-gold mx-auto md:mx-0 mb-4 transition-transform duration-300 ease-in-out group-hover:scale-110"
@@ -237,7 +237,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredProjects.map((project, i) => (
-              <AnimateOnScroll key={project.label} delay={i * 200}>
+              <AnimateOnScroll key={project.label} delay={i * 140}>
                 <div className="group relative aspect-[3/4] overflow-hidden cursor-pointer">
                   {/* Placeholder background with scale effect */}
                   <div className="absolute inset-0 bg-cream/10 transition-transform duration-500 ease-in-out group-hover:scale-105 flex items-center justify-center">
@@ -257,7 +257,7 @@ export default function Home() {
             ))}
           </div>
 
-          <AnimateOnScroll delay={600}>
+          <AnimateOnScroll delay={420}>
             <div className="text-center mt-12">
               <Link
                 href="/portfolio"
