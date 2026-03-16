@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-green-primary: #2C5F2D;
-  --color-green-dark: #234A24;
+  --color-green-primary: #14372F;
+  --color-green-dark: #0E2A23;
   --color-cream: #F5F1EB;
-  --color-gold: #B8860B;
+  --color-gold: #CF9941;
   --color-text-dark: #1A1A1A;
   --color-text-light: #FFFFFF;
   --color-muted: #D4CBC2;

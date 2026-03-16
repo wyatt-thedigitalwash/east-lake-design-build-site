@@ -29,9 +29,9 @@
 
 ## Color Palette
 
-- **Primary (Dark Green):** #2C5F2D (pulled from their existing logo)
+- **Primary (Dark Green):** #14372F
 - **Secondary (Cream/Off-White):** #F5F1EB
-- **Accent (Warm Gold):** #B8860B
+- **Accent (Gold):** #CF9941
 - **Text Dark:** #1A1A1A
 - **Text Light:** #FFFFFF
 - **Muted/Border:** #D4CBC2
@@ -105,13 +105,14 @@
 
 ### Navigation
 
-- Logo (left) — text-based "EAST LAKE DESIGN & BUILD" for now (no logo file yet)
+- Logo (left) — logo file in /public/assets/eastlake-design-build-logo.png, displayed via next/image. Size roughly h-12 on desktop, h-10 on mobile. Logo has a black background — nav uses dark green (#14372F) background with cream (#F5F1EB) text and gold (#CF9941) CTA button so logo sits naturally.
 - Links: Home, About, Services (dropdown: New Construction, Remodeling), Portfolio, Contact
 - Mobile: hamburger menu
 - CTA button in nav: "Get a Free Consultation" → links to /contact
 
 ### Footer
 
+- Logo image (same /public/assets/eastlake-design-build-logo.png) displayed above the tagline — sits naturally on the dark green footer background
 - Company name + tagline
 - Quick links: Home, About, Services, Portfolio, Contact
 - Contact info: phone, email, address

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -17,9 +18,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1 — Brand */}
           <div>
-            <h3 className="font-[Georgia,serif] text-lg uppercase tracking-wide mb-3">
-              East Lake Design &amp; Build
-            </h3>
+            <Image
+              src="/assets/eastlake-design-build-logo.png"
+              alt="East Lake Design & Build"
+              width={160}
+              height={48}
+              className="h-12 w-auto mb-4"
+            />
             <p className="text-cream/70 text-sm leading-relaxed">
               Built with Integrity. Designed to Endure.
             </p>
