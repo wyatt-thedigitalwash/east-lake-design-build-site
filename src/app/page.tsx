@@ -1,7 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Ruler, Sun, MessageSquare, Shield } from "lucide-react";
+import {
+  Ruler,
+  Sun,
+  MessageSquare,
+  Shield,
+  Award,
+  MapPin,
+  Phone,
+  Quote,
+} from "lucide-react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { useEffect, useState } from "react";
 
@@ -113,6 +122,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section className="bg-green-primary border-t border-gold py-4">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-4 md:gap-12">
+            <div className="flex items-center justify-center gap-2">
+              <Shield className="text-gold" size={18} strokeWidth={1.5} />
+              <span className="text-cream text-xs uppercase tracking-widest">
+                Licensed &amp; Insured
+              </span>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Award className="text-gold" size={18} strokeWidth={1.5} />
+              <span className="text-cream text-xs uppercase tracking-widest">
+                CRC1335639
+              </span>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <MapPin className="text-gold" size={18} strokeWidth={1.5} />
+              <span className="text-cream text-xs uppercase tracking-widest">
+                Pinellas County, FL
+              </span>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Phone className="text-gold" size={18} strokeWidth={1.5} />
+              <span className="text-cream text-xs uppercase tracking-widest">
+                Free Consultations
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="bg-cream py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
@@ -182,6 +223,69 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="bg-cream border-t border-muted/40 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateOnScroll>
+            <p className="text-sm uppercase tracking-widest text-gold text-center">
+              The Process
+            </p>
+            <div className="h-[2px] bg-gold w-16 mx-auto mt-3 mb-4" />
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay={100}>
+            <h2 className="font-[Georgia,serif] text-3xl md:text-4xl text-green-primary text-center mb-16">
+              From Vision to Reality in Three Steps
+            </h2>
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 max-w-5xl mx-auto">
+            <AnimateOnScroll delay={0} className="relative md:px-8">
+              <p className="font-[Georgia,serif] text-4xl font-bold text-gold mb-4 text-center md:text-left">
+                01
+              </p>
+              <h3 className="font-[Georgia,serif] text-xl text-text-dark mb-3 text-center md:text-left">
+                Schedule a Consultation
+              </h3>
+              <p className="text-text-dark/70 leading-relaxed text-center md:text-left">
+                Tell us about your project. We&apos;ll discuss your vision,
+                goals, and budget in a free, no-pressure consultation.
+              </p>
+              {/* Connector line — desktop only */}
+              <div className="hidden md:block absolute top-5 right-0 w-8 border-t-2 border-dashed border-gold/40" />
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={150} className="relative md:px-8">
+              <p className="font-[Georgia,serif] text-4xl font-bold text-gold mb-4 text-center md:text-left">
+                02
+              </p>
+              <h3 className="font-[Georgia,serif] text-xl text-text-dark mb-3 text-center md:text-left">
+                Design &amp; Plan
+              </h3>
+              <p className="text-text-dark/70 leading-relaxed text-center md:text-left">
+                Our team creates a detailed plan tailored to your lifestyle, your
+                property, and Florida&apos;s unique building demands.
+              </p>
+              {/* Connector line — desktop only */}
+              <div className="hidden md:block absolute top-5 right-0 w-8 border-t-2 border-dashed border-gold/40" />
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={300} className="md:px-8">
+              <p className="font-[Georgia,serif] text-4xl font-bold text-gold mb-4 text-center md:text-left">
+                03
+              </p>
+              <h3 className="font-[Georgia,serif] text-xl text-text-dark mb-3 text-center md:text-left">
+                We Build, You Relax
+              </h3>
+              <p className="text-text-dark/70 leading-relaxed text-center md:text-left">
+                Sit back while our crew brings your vision to life — on time, on
+                budget, and built to last.
+              </p>
             </AnimateOnScroll>
           </div>
         </div>
@@ -269,6 +373,105 @@ export default function Home() {
                 </span>
               </Link>
             </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-cream py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateOnScroll>
+            <p className="text-sm uppercase tracking-widest text-gold text-center">
+              What Our Clients Say
+            </p>
+            <div className="h-[2px] bg-gold w-16 mx-auto mt-3 mb-12" />
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <AnimateOnScroll delay={0}>
+              <div className="bg-white border-l-4 border-gold p-8">
+                <Quote
+                  className="text-gold mb-4"
+                  size={28}
+                  strokeWidth={1.5}
+                />
+                <p className="italic text-lg text-text-dark leading-relaxed mb-6">
+                  &ldquo;East Lake transformed our outdated kitchen into
+                  something we never imagined possible. The attention to detail
+                  and communication throughout the entire process was
+                  exceptional.&rdquo;
+                </p>
+                <div>
+                  <p className="font-semibold text-text-dark">
+                    Michael &amp; Sarah T.
+                  </p>
+                  <p className="text-text-dark/50 text-sm">
+                    St. Petersburg, FL
+                  </p>
+                  <p className="text-gold text-xs uppercase tracking-widest mt-1">
+                    Kitchen Remodel
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={150}>
+              <div className="bg-white border-l-4 border-gold p-8">
+                <Quote
+                  className="text-gold mb-4"
+                  size={28}
+                  strokeWidth={1.5}
+                />
+                <p className="italic text-lg text-text-dark leading-relaxed mb-6">
+                  &ldquo;From the initial consultation to the final walkthrough,
+                  the East Lake team was professional, transparent, and genuinely
+                  invested in our vision. Our custom home exceeded every
+                  expectation.&rdquo;
+                </p>
+                <div>
+                  <p className="font-semibold text-text-dark">David R.</p>
+                  <p className="text-text-dark/50 text-sm">Palm Harbor, FL</p>
+                  <p className="text-gold text-xs uppercase tracking-widest mt-1">
+                    Custom Home
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area */}
+      <section className="bg-green-primary py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimateOnScroll>
+            <p className="text-sm uppercase tracking-widest text-gold text-center">
+              Proudly Serving
+            </p>
+            <div className="h-[2px] bg-gold w-16 mx-auto mt-3 mb-6" />
+            <h2 className="font-[Georgia,serif] text-3xl md:text-4xl text-cream text-center mb-6">
+              Pinellas County &amp; Greater Tampa Bay
+            </h2>
+            <p className="text-cream/70 text-sm tracking-wide text-center max-w-3xl mx-auto mb-8">
+              St. Petersburg{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Clearwater{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Palm Harbor{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Largo{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Dunedin{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Safety Harbor{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Tarpon
+              Springs{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Seminole{" "}
+              <span className="text-gold/60 mx-1">&middot;</span> Tampa
+            </p>
+            <p className="text-center">
+              <Link
+                href="/contact"
+                className="text-gold text-sm tracking-wide hover:underline transition-all duration-300 ease-in-out"
+              >
+                Serving your area? Let&apos;s talk.
+              </Link>
+            </p>
           </AnimateOnScroll>
         </div>
       </section>
