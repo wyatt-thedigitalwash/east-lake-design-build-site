@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -17,9 +17,29 @@ const serviceLinks = [
   { label: "Remodeling", href: "/services/remodeling" },
 ];
 
+const mobileLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "— New Construction", href: "/services/new-construction", indent: true },
+  { label: "— Remodeling", href: "/services/remodeling", indent: true },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [menuHeight, setMenuHeight] = useState(0);
+  const menuContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mobileOpen && menuContentRef.current) {
+      setMenuHeight(menuContentRef.current.scrollHeight);
+    } else {
+      setMenuHeight(0);
+    }
+  }, [mobileOpen]);
 
   return (
     <nav className="sticky top-0 z-50 bg-green-primary border-b border-cream/10">
@@ -96,77 +116,65 @@ export default function Navigation() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger — crossfade icons */}
         <button
-          className="lg:hidden text-cream"
+          className="lg:hidden text-cream relative w-7 h-7"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu
+            size={28}
+            className="absolute inset-0 transition-opacity duration-200 ease-in-out"
+            style={{ opacity: mobileOpen ? 0 : 1 }}
+          />
+          <X
+            size={28}
+            className="absolute inset-0 transition-opacity duration-200 ease-in-out"
+            style={{ opacity: mobileOpen ? 1 : 0 }}
+          />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-green-primary border-t border-cream/10">
+      {/* Mobile Menu — animated slide */}
+      <div
+        className="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
+        style={{
+          maxHeight: menuHeight,
+          opacity: mobileOpen ? 1 : 0,
+        }}
+      >
+        <div ref={menuContentRef} className="bg-green-primary border-t border-cream/10">
           <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
-            <Link
-              href="/"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm uppercase tracking-widest text-cream py-2"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm uppercase tracking-widest text-cream py-2"
-            >
-              About
-            </Link>
-            <div className="flex flex-col">
+            {mobileLinks.map((link, i) => (
               <Link
-                href="/services"
+                key={link.href + link.label}
+                href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm uppercase tracking-widest text-cream py-2"
+                className={`text-sm uppercase tracking-widest py-2 transition-opacity duration-300 ease-in-out ${
+                  link.indent ? "text-cream/70 pl-4" : "text-cream"
+                }`}
+                style={{
+                  opacity: mobileOpen ? 1 : 0,
+                  transitionDelay: mobileOpen ? `${i * 50}ms` : "0ms",
+                }}
               >
-                Services
+                {link.label}
               </Link>
-              {serviceLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm uppercase tracking-widest text-cream/70 py-2 pl-4"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            <Link
-              href="/portfolio"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm uppercase tracking-widest text-cream py-2"
-            >
-              Portfolio
-            </Link>
+            ))}
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="text-sm uppercase tracking-widest text-cream py-2"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="bg-gold text-white text-sm uppercase tracking-widest px-5 py-3 text-center mt-2 hover:bg-gold/85 transition-colors"
+              className="bg-gold text-white text-sm uppercase tracking-widest px-5 py-3 text-center mt-2 hover:bg-gold/85 transition-all duration-300 ease-in-out"
+              style={{
+                opacity: mobileOpen ? 1 : 0,
+                transitionDelay: mobileOpen ? `${mobileLinks.length * 50}ms` : "0ms",
+              }}
             >
               Get a Free Consultation
             </Link>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
